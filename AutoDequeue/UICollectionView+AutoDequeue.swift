@@ -58,7 +58,7 @@ extension UICollectionView {
 
 extension UICollectionView {
 
-    public func autoDequeueReusableSupplementaryView<T: UICollectionReusableView>(for indexPath: IndexPath) -> T {
+    public func dequeueReusableSupplementaryView<T: UICollectionReusableView>(for indexPath: IndexPath) -> T {
         let identifier = T.reuseIdentifier
         let kind = T.supplementaryElementKind
         if reusableSupplementaryViewRegistry.insert(T.reuseIdentifier).inserted {

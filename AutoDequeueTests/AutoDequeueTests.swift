@@ -80,10 +80,10 @@ class AutoDequeueTests: XCTestCase {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
         _ = collectionView.dequeueReusableCell(for: IndexPath())
-        _ = collectionView.autoDequeueReusableSupplementaryView(for: IndexPath())
+        _ = collectionView.dequeueReusableSupplementaryView(for: IndexPath())
 
         _ = collectionView.dequeueReusableCell(for: IndexPath()) as TestCollectionViewCell
-        _ = collectionView.autoDequeueReusableSupplementaryView(for: IndexPath()) as TestCollectionReusableView
+        _ = collectionView.dequeueReusableSupplementaryView(for: IndexPath()) as TestCollectionReusableView
     }
 
     func testMapView() {
