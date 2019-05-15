@@ -15,7 +15,7 @@ Element registration, type casting, and error handling are all done inside a the
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate the library into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'AutoDequeue', '1.0.0'
+pod 'AutoDequeue', '1.1.0'
 ```
 
 ### Swift Package Manager
@@ -24,7 +24,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is a tool for au
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/berbschloe/AutoDequeue.git", from: "1.0.0")
+    .package(url: "https://github.com/berbschloe/AutoDequeue.git", from: "1.1.0")
 ]
 ```
 
