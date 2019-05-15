@@ -44,7 +44,7 @@ It would be recommended to add AutoDequeue globally because it can get annoying 
 ```swift
 func viewDidLoad() {
     super.viewDidLoad()
-  
+    // register elements by a reuse id
     tableView.register(CustomCell.self, forCellReuseIdentifier: "CELL_ID")
     tableView.register(CustomHeader.self, forHeaderFooterViewReuseIdentifier: "HEADER_ID")
 }
@@ -102,7 +102,7 @@ func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) ->
 ```swift
 func viewDidLoad() {
     super.viewDidLoad()
-  
+    // register elements by a reuse id
     collectionView.register(CustomCell.self, forCellWithReuseIdentifier: "CELL_ID")
     collectionView.register(CustomHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HEADER_ID")
 }
@@ -161,7 +161,7 @@ func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElem
 ```swift
 func viewDidLoad() {
     super.viewDidLoad()
-    
+    // register elements by a reuse id
     mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: "ANNOTATION_ID")
 }
 
