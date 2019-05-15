@@ -38,7 +38,7 @@ It would be recommended to add AutoDequeue globally because it can get annoying 
 @_exported import AutoDequeue
 ```
 
-### How to use for Table View
+### How to use for UITableView
 
 #### Old Way
 ```swift
@@ -95,7 +95,7 @@ func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) ->
 }
 ```
 
-### How to use for Collection View
+### How to use for UICollectionView
 
 #### Old Way
 
@@ -138,7 +138,7 @@ func viewDidLoad() {
     // no need to register elements
 }
 
-unc collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: CustomCell = dequeueReusableCell(for: indexPath)
     
     // setup cell
@@ -154,7 +154,7 @@ func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElem
     return header
 }
 ```
-### How to use for Map View
+### How to use for MKMapView
 
 #### Old Way
 
