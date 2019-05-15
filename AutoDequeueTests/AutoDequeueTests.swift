@@ -33,6 +33,12 @@ class TestCollectionReusableView: UICollectionReusableView {}
 
 class TestAnnotationView: MKAnnotationView {}
 
+class OverrideTestTableViewCell: UITableViewCell {
+    override class var reuseIdentifier: String {
+        return "Test"
+    }
+}
+
 class AutoDequeueTests: XCTestCase {
 
     func testReuseIdentifiable() {
@@ -53,6 +59,11 @@ class AutoDequeueTests: XCTestCase {
 
         XCTAssertEqual("MKAnnotationView.ReuseIdentifier", MKAnnotationView.reuseIdentifier)
         XCTAssertEqual("\(moduleName).TestAnnotationView.ReuseIdentifier", TestAnnotationView.reuseIdentifier)
+    }
+
+    func testOverride() {
+        let aClass: UITableViewCell.Type = OverrideTestTableViewCell.self
+        XCTAssertEqual("Test", aClass.reuseIdentifier)
     }
 
 

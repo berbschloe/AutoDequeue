@@ -25,14 +25,16 @@ import UIKit
 
 extension UITableViewCell {
 
-    public static var reuseIdentifier: String {
+    @objc
+    open class var reuseIdentifier: String {
         return "\(String(reflecting: self)).ReuseIdentifier"
     }
 }
 
 extension UITableViewHeaderFooterView {
 
-    public static var reuseIdentifier: String {
+    @objc
+    open class var reuseIdentifier: String {
         return "\(String(reflecting: self)).ReuseIdentifier"
     }
 }

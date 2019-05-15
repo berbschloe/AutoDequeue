@@ -25,12 +25,14 @@ import UIKit
 
 extension UICollectionReusableView {
 
-    public static var reuseIdentifier: String {
+    @objc
+    open class var reuseIdentifier: String {
         return "\(String(reflecting: self)).ReuseIdentifier"
     }
 
-    public static var supplementaryElementKind: String {
-        return "\(String(reflecting: self)).SupplementaryElementKind"
+    @objc
+    open class var supplementaryElementKind: String {
+        return UICollectionView.elementKindSectionHeader
     }
 }
 
@@ -58,18 +60,17 @@ extension UICollectionView {
 
 extension UICollectionView {
 
-    public func dequeueReusableSupplementaryView<T: UICollectionReusableView>(for indexPath: IndexPath) -> T {
+    public func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind kind: String = T.supplementaryElementKind, for indexPath: IndexPath) -> T {
         let identifier = T.reuseIdentifier
-        let kind = T.supplementaryElementKind
         if reusableSupplementaryViewRegistry.insert(T.reuseIdentifier).inserted {
             register(T.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier)
         }
 
-        guard let cell = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: indexPath) as? T else {
+        guard let view = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: indexPath) as? T else {
             fatalError("No supplementary view of type \(T.self) is registered with identifier \(identifier) of kind \(kind)")
         }
 
-        return cell
+        return view
     }
 
     private static var reusableSupplementaryViewRegistryKey: UInt8 = 0

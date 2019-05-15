@@ -24,8 +24,9 @@
 import MapKit
 
 extension MKAnnotationView {
-    
-    public static var reuseIdentifier: String {
+
+    @objc
+    open class var reuseIdentifier: String {
         return "\(String(reflecting: self)).ReuseIdentifier"
     }
 }
@@ -55,6 +56,7 @@ extension MKMapView {
             }
 
             annotationView.annotation = annotation
+            
             return annotationView
         }
     }
