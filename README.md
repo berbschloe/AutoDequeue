@@ -1,6 +1,6 @@
 # AutoDequeue
 A type safe way to dequeue UITableView, UICollectionView, and MKMapView elements without having to call register.
-Element registration, type casting, and error handleing are all done inside a the single dequeue method for each view.
+Element registration, type casting, and error handling are all done inside a the single dequeue method for each view.
 
 ## Requirements
 
