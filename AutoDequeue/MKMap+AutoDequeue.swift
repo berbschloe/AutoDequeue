@@ -25,14 +25,15 @@ import MapKit
 
 extension MKAnnotationView {
 
-    @objc
-    open class var reuseIdentifier: String {
+    /// A standardized reuse identifier to use with dequeueing annotation views.
+    @objc open class var reuseIdentifier: String {
         return "\(String(reflecting: self)).ReuseIdentifier"
     }
 }
 
 extension MKMapView {
 
+    /// Auto dequeues a reusable annotation view for the provided annotation.
     public func dequeueReusableAnnotationView<T: MKAnnotationView>(for annotation: MKAnnotation) -> T {
         let identifier = T.reuseIdentifier
 

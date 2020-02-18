@@ -25,22 +25,23 @@ import UIKit
 
 extension UITableViewCell {
 
-    @objc
-    open class var reuseIdentifier: String {
+    /// A standardized reuse identifier to use with dequeueing cells.
+    @objc open class var reuseIdentifier: String {
         return "\(String(reflecting: self)).ReuseIdentifier"
     }
 }
 
 extension UITableViewHeaderFooterView {
 
-    @objc
-    open class var reuseIdentifier: String {
+    /// A standardized reuse identifier to use with dequeueing header / footer views..
+    @objc open class var reuseIdentifier: String {
         return "\(String(reflecting: self)).ReuseIdentifier"
     }
 }
 
 extension UITableView {
 
+    /// Auto dequeues a reusable cell.
     public func dequeueReusableCell<T: UITableViewCell>() -> T {
         let identifier = T.reuseIdentifier
         if cellRegistry.insert(identifier).inserted {
@@ -53,7 +54,8 @@ extension UITableView {
 
         return cell
     }
-
+    
+    /// Auto dequeues a reusable cell for the provided index path.
     public func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
         let identifier = T.reuseIdentifier
         if cellRegistry.insert(identifier).inserted {
@@ -76,6 +78,7 @@ extension UITableView {
 
 extension UITableView {
 
+    /// Auto dequeues a reusable header / footer view..
     public func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>() -> T {
         let identifier = T.reuseIdentifier
         if headerFooterViewRegistry.insert(identifier).inserted {

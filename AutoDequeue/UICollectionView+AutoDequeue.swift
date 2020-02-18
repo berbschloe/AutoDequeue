@@ -25,19 +25,20 @@ import UIKit
 
 extension UICollectionReusableView {
 
-    @objc
-    open class var reuseIdentifier: String {
+    /// A standardized reuse identifier to use with dequeueing cells.
+    @objc open class var reuseIdentifier: String {
         return "\(String(reflecting: self)).ReuseIdentifier"
     }
 
-    @objc
-    open class var supplementaryElementKind: String {
+    /// A standardized reuse identifier to use with dequeueing supplementary view.
+    @objc open class var supplementaryElementKind: String {
         return UICollectionView.elementKindSectionHeader
     }
 }
 
 extension UICollectionView {
 
+    /// Auto dequeues a reusable cell for the provided index path.
     public func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
         let identifier = T.reuseIdentifier
         if cellRegistry.insert(identifier).inserted {
@@ -60,6 +61,7 @@ extension UICollectionView {
 
 extension UICollectionView {
 
+    /// Auto dequeues a reusable supplementary view of the given kind for the provided index path..
     public func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind kind: String = T.supplementaryElementKind, for indexPath: IndexPath) -> T {
         let identifier = T.reuseIdentifier
         if reusableSupplementaryViewRegistry.insert(T.reuseIdentifier).inserted {
