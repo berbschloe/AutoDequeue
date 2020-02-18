@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = "AutoDequeue"
-    s.version = "1.1.0"
+    s.version = "1.2.0"
     s.summary = "A type safe way to dequeue UITableView, UICollectionView, and MKMapView elements without having to call register."
     s.homepage = "https://github.com/berbschloe/AutoDequeue"
     s.license = "MIT"

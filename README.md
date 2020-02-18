@@ -1,6 +1,6 @@
 # AutoDequeue
 [![Swift](https://img.shields.io/badge/swift-5.0-orange.svg)](https://developer.apple.com/swift/)
-[![CocoaPods](https://img.shields.io/badge/pod-v1.1.0-blue.svg)](https://cocoapods.org/pods/AutoDequeue)
+[![CocoaPods](https://img.shields.io/badge/pod-v1.2.0-blue.svg)](https://cocoapods.org/pods/AutoDequeue)
 
 A type safe way to auto dequeue UITableView, UICollectionView, and MKMapView elements without having to call the register function.
 Element registration, type casting, and error handling are all done inside a the single dequeue method for view.
@@ -18,7 +18,7 @@ Element registration, type casting, and error handling are all done inside a the
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate the library into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'AutoDequeue', '1.1.0'
+pod 'AutoDequeue', '1.2.0'
 ```
 
 ### Swift Package Manager
@@ -27,7 +27,7 @@ The [Swift Package Manager](https://swift.org/package-manager/) is a tool for au
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/berbschloe/AutoDequeue.git", from: "1.1.0")
+    .package(url: "https://github.com/berbschloe/AutoDequeue.git", from: "1.2.0")
 ]
 ```
 
