@@ -1,6 +1,7 @@
 # AutoDequeue
 [![Swift](https://img.shields.io/badge/swift-5.0-orange.svg)](https://developer.apple.com/swift/)
 [![CocoaPods](https://img.shields.io/badge/pod-v1.2.0-blue.svg)](https://cocoapods.org/pods/AutoDequeue)
+[![SwiftPm](https://img.shields.io/badge/swiftpm-compatible-limegreen.svg?)](https://swift.org/package-manager)
 
 A type safe way to auto dequeue UITableView, UICollectionView, and MKMapView elements without having to call the register function.
 Element registration, type casting, and error handling are all done inside a the single dequeue method for view.
