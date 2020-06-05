@@ -3,26 +3,15 @@
 import PackageDescription
 
 let package = Package(
-  name: "AutoDequeue",
-  platforms: [
-    .iOS(.v9)
-  ],
-  products: [
-    .library(
-      name: "AutoDequeue",
-      targets: ["AutoDequeue"]
-    ),
-  ],
-  targets: [
-    .target(
-      name: "AutoDequeue",
-      path: "AutoDequeue"
-    ),
-    .testTarget(
-      name: "AutoDequeueTests",
-      dependencies: ["AutoDequeue"],
-      path: "AutoDequeueTests"
-    ),
-  ],
-  swiftLanguageVersions: [.v5]
+    name: "AutoDequeue",
+    platforms: [
+        .iOS(.v11)
+    ],
+    products: [
+        .library(name: "AutoDequeue", targets: ["AutoDequeue"]),
+    ],
+    targets: [
+        .target(name: "AutoDequeue", path: "AutoDequeue"),
+        .testTarget(name: "AutoDequeueTests", dependencies: ["AutoDequeue"]),
+    ]
 )
