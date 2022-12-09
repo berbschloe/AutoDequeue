@@ -4,7 +4,7 @@
 [![SwiftPm](https://img.shields.io/badge/swiftpm-compatible-limegreen.svg?)](https://swift.org/package-manager)
 
 A type safe way to auto dequeue UITableView, UICollectionView, and MKMapView elements without having to call the register function.
-Element registration, type casting, and error handling are all done inside a the single dequeue method for view.
+Element registration, type casting, and error handling are all done inside a the single dequeue method.
 
 ## Requirements
 
